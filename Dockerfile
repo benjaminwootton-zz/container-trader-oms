@@ -1,6 +1,10 @@
-FROM python 
+FROM python
 
-CMD echo "Hello from container!"
+RUN pip install flask
 
-RUN echo "Hello World!"
+ADD server.py /
+
+EXPOSE 5000
+
+CMD python3 /server.py
 
